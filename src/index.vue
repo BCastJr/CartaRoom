@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        {{statusCheck}}
-        <main-navbar></main-navbar>
+        <main-navbar v-bind:is-host="isHost"
+                     v-bind:is-patron="isPatron"></main-navbar>
         <sbar></sbar>
         <div id="notLoggedInContent">
             <router-view></router-view>
