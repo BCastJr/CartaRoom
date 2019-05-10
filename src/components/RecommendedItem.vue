@@ -1,7 +1,8 @@
 <template>
     <div class="recommended-item">
         <RoomThumbnail></RoomThumbnail>
-        <h2>Book Title</h2>
+        <h2>{{roomName}}</h2>
+        <p class="room-description">{{address}}</p>
         <button class="search_button">Book Now</button>
     </div>
 </template>
@@ -10,7 +11,13 @@
     import RoomThumbnail from "./RoomThumbnail";
     export default {
         name: "RecommendedItem",
-        components: {RoomThumbnail}
+        components: {RoomThumbnail},
+        props:
+            {
+                roomID: String,
+                roomName: String,
+                address: String,
+            }
     }
 </script>
 

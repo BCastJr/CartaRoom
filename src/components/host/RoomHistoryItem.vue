@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import RoomThumbnail from "./RoomThumbnail";
+    import RoomThumbnail from "../RoomThumbnail";
 
     export default {
         name: "RoomHistoryItem",
