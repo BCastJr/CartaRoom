@@ -37,13 +37,31 @@
     import Sbar from "./components/nav/Sbar";
     import MainNavbar from "./components/nav/MainNavbar";
 
+    let idTokenResult;
+    let userID;
     // db.ref('rooms').once('value').then(function(snapshot) {
     //   console.log(snapshot.val());
     // }).catch((error) => {
     //   console.log(error);
     // });
+    if (firebase.auth().currentUser) {
+        idTokenResult = firebase.auth().currentUser.getIdTokenResult();
+        if (idTokenResult.claims.host) {
+            this.isHost = true;
+            this.isPatron = false;
+        } else if (idTokenResult.claims.patron) {
+            this.isHost = false;
+            this.isPatron = true;
+        } else {
+            this.isHost = false;
+            this.isPatron = false;
+        }
+    } else {
+        this.isHost = false;
+        this.isPatron = false;
+    }
 
-    let userID;
+
     firebase.auth().onAuthStateChanged(function (user) {
 
         if (user) {
@@ -60,7 +78,7 @@
     export default {
         name: 'home',
         components: {MainNavbar, Sbar},
-        data: function() {
+        data: function () {
             return {
                 isHost: false,
                 isPatron: false,
