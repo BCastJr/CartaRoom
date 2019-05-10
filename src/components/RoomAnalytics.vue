@@ -1,6 +1,14 @@
 <template>
     <div class="room-analytics">
+        <div class="analytics-card">
 
+        </div>
+        <div class="analytics-card">
+
+        </div>
+        <div class="analytics-card">
+
+        </div>
     </div>
 </template>
 
