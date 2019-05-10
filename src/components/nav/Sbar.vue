@@ -1,0 +1,81 @@
+<template>
+    <div class="side-navbar">
+        <host-sbar v-if="isHost"></host-sbar>
+        <patron-sbar v-if="isPatron"></patron-sbar>
+    </div>
+</template>
+
+<style scoped>
+    /* Testing for the side bar nav */
+
+    /* The side navigation menu */
+    .sidenav {
+        height: 100%; /* 100% Full-height */
+        width: 95px; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #111; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+        transition: margin-left .5s;
+        padding: 20px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+
+
+    /* Nav Bar Stuff */
+    .NavTitle {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        position: relative;
+        line-height: 29px;
+    }
+
+    #bottom {
+        padding-top: 500px;
+        position: relative;
+    }
+</style>
+<script>
+    import HostSbar from "./HostSbar";
+    import PatronSbar from "./PatronSbar";
+
+    export default {
+        components: {HostSbar, PatronSbar}
+    }
+</script>

@@ -1,20 +1,11 @@
 <template>
     <div id="app">
-        <div id="nav">
-            <!-- renders view before login -->
-            <router-link to="/login">Login</router-link>
-            |
-            <router-link to="/sign-up">Sign Up</router-link>
-            |
-            <router-link to="/about">About</router-link>
-
-        </div>
-
-        
+        {{statusCheck}}
+        <main-navbar></main-navbar>
+        <sbar></sbar>
         <div id="notLoggedInContent">
             <router-view></router-view>
         </div>
-
         <v-footer dark height="auto" style="margin-bottom: 0px; position: relative">
             <v-card>
                 <v-card-text class="white--text pt-0">
@@ -35,7 +26,6 @@
                 </v-card-text>
             </v-card>
         </v-footer>
-
     </div>
 
 
@@ -44,7 +34,8 @@
 <script>
     import firebase from 'firebase';
     import db from '@/firebase.js';
-    import HostNavbar from "./components/nav/HostNavbar";
+    import Sbar from "./components/nav/Sbar";
+    import MainNavbar from "./components/nav/MainNavbar";
 
     // db.ref('rooms').once('value').then(function(snapshot) {
     //   console.log(snapshot.val());
@@ -62,11 +53,19 @@
             // console.log("No user available");
             userID = "null";
         }
+
     });
+
 
     export default {
         name: 'home',
-        components: {HostNavbar},
+        components: {MainNavbar, Sbar},
+        data: function() {
+            return {
+                isHost: false,
+                isPatron: false,
+            }
+        },
         methods: {
             logout: function () {
                 firebase.auth().signOut().then(() => {

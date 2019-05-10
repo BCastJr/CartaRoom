@@ -1,7 +1,8 @@
 <template>
     <div class="room-history">
         <room-history-item v-for="roomitem in roomList"
-                           v-bind:key="roomitem.roomID">
+                           v-bind:key="roomitem.roomID"
+        >
         </room-history-item>
     </div>
 </template>

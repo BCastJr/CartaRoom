@@ -17,12 +17,7 @@
     export default {
         name: "RoomHistoryItem",
         components: {RoomThumbnail},
-        props: {
-            roomID: String,
-            roomName: String,
-            roomImg: String,
-            address: String,
-        }
+        props: ['room']
     }
 </script>
 
