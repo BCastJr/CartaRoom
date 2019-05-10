@@ -1,12 +1,15 @@
 <template>
     <div id="comp-logo-place">
-        <img id="comp-logo" src="../assets/Final_CartaRoom.png"/>
+        <img id="comp-logo" :src="logoSrc"/>
     </div>
 </template>
 
 <script>
     export default {
-        name: "CompLogo"
+        name: "CompLogo",
+        props: {
+            logoSrc: String
+        }
     }
 </script>
 

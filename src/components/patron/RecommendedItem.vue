@@ -1,6 +1,6 @@
 <template>
     <div class="recommended-item">
-        <RoomThumbnail></RoomThumbnail>
+        <RoomThumbnail v-bind:image-src="roomImg"></RoomThumbnail>
         <h2>{{roomName}}</h2>
         <p class="room-description">{{address}}</p>
         <button class="search_button">Book Now</button>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import RoomThumbnail from "./RoomThumbnail";
+    import RoomThumbnail from "../RoomThumbnail";
     export default {
         name: "RecommendedItem",
         components: {RoomThumbnail},
@@ -16,6 +16,7 @@
             {
                 roomID: String,
                 roomName: String,
+                roomImg: String,
                 address: String,
             }
     }

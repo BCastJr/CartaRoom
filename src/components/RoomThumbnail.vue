@@ -1,17 +1,22 @@
 <template>
-    <div class="roomthumbnail">
-        <img class="thumbnail" src="../assets/main-room.jpg"/>
+    <div class="room-thumbnail">
+        <img v-bind="imageSrc" :class="isShowing" :src="imageSrc" :alt="imageDesc"/>
     </div>
 </template>
 
 <script>
     export default {
-        name: "RoomThumbnail"
+        name: "RoomThumbnail",
+        props: {
+            imageSrc: String,
+            imageDesc: String,
+            isShowing: Boolean
+        }
     }
 </script>
 
 <style scoped>
-    .roomthumbnail {
+    .room-thumbnail {
         padding: 16px;
     }
     .thumbnail {

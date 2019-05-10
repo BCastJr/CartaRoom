@@ -24,7 +24,7 @@
    </div>
 </template>
 <script>
-   import Recommended from "../components/Recommended";
+   import Recommended from "../components/patron/Recommended";
    export default {
      name: 'search',
        components: {Recommended},

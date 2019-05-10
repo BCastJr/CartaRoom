@@ -44,7 +44,7 @@
 <script>
     import firebase from 'firebase';
     import db from '@/firebase.js';
-    import HostNavbar from "./components/host/HostNavbar";
+    import HostNavbar from "./components/nav/HostNavbar";
 
     // db.ref('rooms').once('value').then(function(snapshot) {
     //   console.log(snapshot.val());

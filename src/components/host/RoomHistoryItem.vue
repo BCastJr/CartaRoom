@@ -1,12 +1,12 @@
 <template>
     <div class="room-history-item">
-        <room-thumbnail></room-thumbnail>
-        <h2>Room Title</h2>
-        <h3>Reviews (8)</h3>
+
+        <room-thumbnail v-bind:image-src="roomImg"></room-thumbnail>
+        <h2>{{room.roomName}}</h2>
+        <h3>Review</h3>
         <button>View Customers</button>
         <button>View Analytics</button>
-        <button>View Customers</button>
-        <button>View Customers</button>
+        <button>Export Data</button>
     </div>
 
 </template>
@@ -16,7 +16,13 @@
 
     export default {
         name: "RoomHistoryItem",
-        components: {RoomThumbnail}
+        components: {RoomThumbnail},
+        props: {
+            roomID: String,
+            roomName: String,
+            roomImg: String,
+            address: String,
+        }
     }
 </script>
 
